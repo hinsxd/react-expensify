@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
 import selectExpenses from '../selectors/expenses';
+import selectExpensesTotal from '../selectors/expenses-total';
 export const ExpenseList = props => (
   <div>
     {props.expenses.length === 0 ? (
@@ -11,7 +12,6 @@ export const ExpenseList = props => (
         <ExpenseListItem key={expense.id} {...expense} />
       ))
     )}
-    {}
   </div>
 );
 
