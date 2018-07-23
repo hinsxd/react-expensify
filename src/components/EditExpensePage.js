@@ -5,7 +5,7 @@ import { editExpense, removeExpense } from '../actions/expenses';
 
 export class EditExpensePage extends Component {
   onSubmit = expense => {
-    this.props.editExpense(expense.id, expense);
+    this.props.editExpense(this.props.expense.id, expense);
     this.props.history.push('/');
   };
   onRemove = () => {
