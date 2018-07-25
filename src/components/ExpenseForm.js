@@ -9,7 +9,7 @@ export default class ExpenseForm extends Component {
       description: props.expense ? props.expense.description : '',
       note: props.expense ? props.expense.note : '',
       amount: props.expense ? (props.expense.amount / 100).toString() : '',
-      createdAt: props.expense ? props.expense.createdAt : moment(),
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
       error: ''
     };
@@ -64,7 +64,7 @@ export default class ExpenseForm extends Component {
         description,
         note,
         amount: parseFloat(amount, 10) * 100,
-        createdAt
+        createdAt: createdAt.valueOf()
       });
     }
   };

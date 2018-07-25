@@ -83,7 +83,7 @@ test('should call onSubmit prop on form submission', () => {
     description: expenses[0].description,
     note: expenses[0].note,
     amount: expenses[0].amount,
-    createdAt: expenses[0].createdAt
+    createdAt: expenses[0].createdAt.valueOf()
   });
 });
 

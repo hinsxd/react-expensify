@@ -7,11 +7,11 @@ export default ({
   return expenses
     .filter(expense => {
       const startDateMatch = startDate
-        ? startDate.isSameOrBefore(expense.createdAt, 'day')
+        ? startDate.isSameOrBefore(moment(expense.createdAt), 'day')
         : true;
 
       const endDateMatch = endDate
-        ? endDate.isSameOrAfter(expense.createdAt, 'day')
+        ? endDate.isSameOrAfter(moment(expense.createdAt), 'day')
         : true;
 
       const textMatch = expense.description
@@ -21,7 +21,7 @@ export default ({
     })
     .sort((a, b) => {
       if (sortBy === 'date') {
-        return a.createdAt.isSameOrBefore(b.createdAt) ? 1 : -1;
+        return a.createdAt < b.createdAt ? 1 : -1;
       }
       if (sortBy === 'amount') return a.amount < b.amount ? 1 : -1;
     });

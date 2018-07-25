@@ -5,19 +5,15 @@ import moment from 'moment';
 
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addExpense, removeExpense, editExpense } from './actions/expenses';
-import {
-  setTextFilter,
-  setStartDate,
-  setEndDate,
-  sortByAmount,
-  sortByDate
-} from './actions/filters';
 
 import './styles/styles.scss';
 import 'normalize.css/normalize.css';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+
+import './firebase/firebase';
+import './playground/promises';
+
 const store = configureStore();
 
 const jsx = (
