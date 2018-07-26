@@ -8,10 +8,9 @@ exports[`should render header correctly 1`] = `
   <NavLink
     activeClassName="is-acrtive"
     aria-current="page"
-    exact={true}
-    to="/"
+    to="/dashboard"
   >
-    Home
+    Dashboard
   </NavLink>
   <NavLink
     activeClassName="is-acrtive"
