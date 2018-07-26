@@ -22,9 +22,10 @@ export const startAddExpense = (expenseData = {}) => {
       amount,
       createdAt
     };
+    console.log(uid);
     return database
       .ref(`users/${uid}/expenses`)
-      .push(expense)
+      .push({ ...expense })
       .then(ref => {
         dispatch(
           addExpense({
